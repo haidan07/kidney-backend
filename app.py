@@ -23,7 +23,7 @@ def get_prediction(values):
     }
     payload = {
         "input_data": [{
-            "fields": ["urea", "ph", "osmolality", "conductivity", "calcium"],
+            "fields": ["gravity", "urea", "ph", "osmolality", "conductivity", "calcium"],
             "values": [values]
         }]
     }
