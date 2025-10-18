@@ -33,7 +33,15 @@ def get_prediction(values):
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.form
-    values = [float(data['urea']), float(data['ph']), float(data['osmolality']), float(data['conductivity']), float(data['calcium'])]
+   values = [
+  float(data['gravity']),
+  float(data['urea']),
+  float(data['ph']),
+  float(data['osmolality']),
+  float(data['conductivity']),
+  float(data['calcium'])
+]
+
     result = get_prediction(values)
     diagnosis = "You have kidney stone" if result == 1 else "You don't have kidney stone"
     return diagnosis
